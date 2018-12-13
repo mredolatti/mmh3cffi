@@ -16,7 +16,7 @@ inline uint32_t fmix32(uint32_t h) {
     return h;
 }
 
-uint32_t murmurhash3_32_x86(const void *key, int len, int32_t seed) {
+uint32_t murmurhash3_32_x86(const unsigned char* key, int len, int32_t seed) {
     const uint8_t *data = (const uint8_t *)key;
     const int nblocks = len / 4;
 

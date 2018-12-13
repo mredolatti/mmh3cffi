@@ -3,7 +3,7 @@ from cffi import FFI
 
 FFI_BUILDER = FFI()
 
-HEADER = 'uint32_t murmurhash3_32_x86(const void *key, int len, int32_t seed);'
+HEADER = 'uint32_t murmurhash3_32_x86(const unsigned char* key, int len, int32_t seed);'
 
 FFI_BUILDER.cdef(HEADER)
 FFI_BUILDER.set_source(
