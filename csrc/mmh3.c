@@ -1,5 +1,7 @@
 #include "stdint.h"
 
+uint32_t murmurhash3_32_x86(const unsigned char* key, int len, int32_t seed);
+
 inline uint32_t rotl32(uint32_t x, int8_t r) {
     return (x << r) | (x >> (32 - r));
 }
@@ -30,7 +32,8 @@ uint32_t murmurhash3_32_x86(const unsigned char* key, int len, int32_t seed) {
 
     const uint32_t *blocks = (const uint32_t *)(data + nblocks * 4);
 
-    for (int i = -nblocks; i; i++) {
+    int i;
+    for (i = -nblocks; i; i++) {
         uint32_t k1 = blocks[i];
 
         k1 *= c1;
