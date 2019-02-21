@@ -11,7 +11,7 @@ FFI_BUILDER.cdef(HEADER)
 FFI_BUILDER.set_source(
     'mmh3cffi._cimpl',
     '',
-    sources=[os.path.sep.join(['csrc', 'mmh3.c'])],
+    sources=[os.path.join('csrc', 'mmh3.c')],
     include_dirs=['csrc']
 )
 
