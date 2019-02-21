@@ -11,7 +11,7 @@ classifiers = [
 
 setup(
     name='mmh3cffi',
-    version='0.1.3',
+    version='0.1.4',
     description='CFFI interface to murmurhash3/32 from aappleby/smhasher',
     license='Apache 2.0',
     author='Split software',
