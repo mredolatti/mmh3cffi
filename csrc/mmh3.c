@@ -1,7 +1,5 @@
 #include "stdint.h"
 
-uint32_t murmurhash3_32_x86(const unsigned char* key, int len, int32_t seed);
-
 inline uint32_t rotl32(uint32_t x, int8_t r) {
     return (x << r) | (x >> (32 - r));
 }
