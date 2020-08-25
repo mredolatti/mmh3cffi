@@ -10,7 +10,7 @@ HEADER = 'uint32_t murmurhash3_32_x86(const unsigned char* key, int len, int32_t
 FFI_BUILDER.cdef(HEADER)
 FFI_BUILDER.set_source(
     'mmh3cffi._cimpl',
-    '',
+    '#include "mmh3.h"',
     sources=[os.path.join('csrc', 'mmh3.c')],
     include_dirs=['csrc']
 )
