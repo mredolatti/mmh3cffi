@@ -1,2 +1,5 @@
-19th February 2019:
+0.2.0 (TBD):
+- Add support for murmur128 x64
+
+0.1.1 (Feb 19, 2019):
 - Fix paths in windows

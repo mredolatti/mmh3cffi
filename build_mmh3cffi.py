@@ -3,10 +3,9 @@ import os
 from cffi import FFI
 
 
+with open(os.path.join("csrc", "mmh3.h"), 'r') as f: HEADER = f.read()
+
 FFI_BUILDER = FFI()
-
-HEADER = 'uint32_t murmurhash3_32_x86(const unsigned char* key, int len, int32_t seed);'
-
 FFI_BUILDER.cdef(HEADER)
 FFI_BUILDER.set_source(
     'mmh3cffi._cimpl',
