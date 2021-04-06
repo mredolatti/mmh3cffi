@@ -16,3 +16,19 @@ def hash_str(to_hash, seed=0):
     const_char_pointer = ffi.new('const unsigned char[]', as_bytes)
     result = lib.murmurhash3_32_x86(const_char_pointer, len(as_bytes), seed)
     return result
+
+def hash_str_128(to_hash, seed=0):
+    """
+    Calculate murmur3/32 hash of incoming string and seed.
+
+    :param to_hash: String to hash
+    :type to_hash: str
+
+    :param seed: Seed to use as a hashing starting point.
+    :type seed: int
+    """
+    as_bytes = to_hash.encode('utf8')
+    const_char_pointer = ffi.new('const unsigned char[]', as_bytes)
+    const_uint64_array = ffi.new('const uint64_t[2]')
+    result = lib.murmurhash3_128_64(const_char_pointer, len(as_bytes), seed, const_uint64_array)
+    return const_uint64_array

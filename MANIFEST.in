@@ -1,0 +1,7 @@
+recursive-include csrc *
+include *.h
+include *.c
+include README.rst
+include setup.py
+include build_mmh3cffi.py
+include MANIFEST.in
